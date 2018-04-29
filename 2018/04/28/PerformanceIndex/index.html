@@ -5,15 +5,19 @@
   
 
   
-  <title>记录</title>
+  <title>性能测试指标分析步骤 | 记录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="记录">
-<meta property="og:url" content="http://shirleydl.github.io/index.html">
+  <meta name="description" content="1.收集、预估数据A：平均每天请求该页面、接口用户数（若没有数据，可估计每天最大访问人数）B：平均每天用户请求该页面、接口的时长；（当天用户在功能完整的可请求时间内，第一次请求到最后一次请求的平均间隔时间）（若没有数据，可估计每天访问时间）C：平均每天用户在该页面、接口的平均在线时长；（当天用户从登陆到退出停留在该页面的平均时间）D：平均每天用户在该页面、接口的平均间隔请求时间；（当天用户在该页面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="性能测试指标分析步骤">
+<meta property="og:url" content="http://shirleydl.github.io/2018/04/28/PerformanceIndex/index.html">
 <meta property="og:site_name" content="记录">
+<meta property="og:description" content="1.收集、预估数据A：平均每天请求该页面、接口用户数（若没有数据，可估计每天最大访问人数）B：平均每天用户请求该页面、接口的时长；（当天用户在功能完整的可请求时间内，第一次请求到最后一次请求的平均间隔时间）（若没有数据，可估计每天访问时间）C：平均每天用户在该页面、接口的平均在线时长；（当天用户从登陆到退出停留在该页面的平均时间）D：平均每天用户在该页面、接口的平均间隔请求时间；（当天用户在该页面">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-04-29T03:00:51.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记录">
+<meta name="twitter:title" content="性能测试指标分析步骤">
+<meta name="twitter:description" content="1.收集、预估数据A：平均每天请求该页面、接口用户数（若没有数据，可估计每天最大访问人数）B：平均每天用户请求该页面、接口的时长；（当天用户在功能完整的可请求时间内，第一次请求到最后一次请求的平均间隔时间）（若没有数据，可估计每天访问时间）C：平均每天用户在该页面、接口的平均在线时长；（当天用户从登陆到退出停留在该页面的平均时间）D：平均每天用户在该页面、接口的平均间隔请求时间；（当天用户在该页面">
   
     <link rel="alternate" href="/" title="记录" type="application/atom+xml">
   
@@ -62,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-PerformanceIndex" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-PerformanceIndex" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/28/PerformanceIndex/" class="article-date">
   <time datetime="2018-04-28T10:14:37.746Z" itemprop="datePublished">2018-04-28</time>
@@ -81,8 +83,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/28/PerformanceIndex/">性能测试指标分析步骤</a>
+    <h1 class="article-title" itemprop="name">
+      性能测试指标分析步骤
     </h1>
   
 
@@ -105,174 +107,24 @@
     </footer>
   </div>
   
-</article>
-
-
-  
-
-  
-    <article id="post-EvaluateRequirements" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/27/EvaluateRequirements/" class="article-date">
-  <time datetime="2018-04-27T03:49:43.372Z" itemprop="datePublished">2018-04-27</time>
-</a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/测试/">测试</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/27/EvaluateRequirements/">评估需求</a>
-    </h1>
   
+    <a href="/2018/04/27/EvaluateRequirements/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">评估需求</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>列出所有功能点并赋值难度分，并根据难度分预估测试时间</p>
-<ul>
-<li>功能点划分方式<ul>
-<li>列出需求所涉及到的所有页面</li>
-<li>列出每个页面需求所涉及到的所有模块</li>
-<li>列出每个模块需求所涉及到的所有功能点</li>
-<li>列出每个功能点需求所涉及到的所有场景、角色等等</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>难度分赋值方式<br>根据每个功能点的难度、复杂度、风险等等进行赋值<br>分值：1、2、3、5、8、13<br>赋值建议（可根据实际情况进行更改）：<ul>
-<li>1：功能点无或少（3个以下）测试场景，且布置的测试场景简单、方便</li>
-<li>2：功能点有较多（3-8个）测试场景，且布置的测试场景简单、方便</li>
-<li>3：功能点有较多（8个以上）测试场景，且布置的测试场景简单、方便</li>
-<li>5：功能点无或少（3个以下）测试场景，且布置的测试场景复杂、困难</li>
-<li>8：功能点有较多（3-8个）测试场景，且布置的测试场景复杂、困难</li>
-<li>13：功能点有较多（8个以上）测试场景，且布置的测试场景复杂、困难</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>预估测试时间方式<br>根据难度分，建议一个测试的时间范围（可根据实际情况进行更改）<ul>
-<li>1：0.5h以下</li>
-<li>2：1-2h</li>
-<li>3：2-3h</li>
-<li>5：3-5h</li>
-<li>8：5-8h</li>
-<li>13：8h以上 </li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://shirleydl.github.io/2018/04/27/EvaluateRequirements/" data-id="cjghooect0002fkmj8pyglb6p" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
 
   
-
+ 
   
-    <article id="post-ActivityTS" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/27/ActivityTS/" class="article-date">
-  <time datetime="2018-04-27T03:42:40.891Z" itemprop="datePublished">2018-04-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/测试/">测试</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/27/ActivityTS/">活动测试流程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/ActivityTS.png" alt="ActivityTS"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://shirleydl.github.io/2018/04/27/ActivityTS/" data-id="cjghooecw0004fkmj2hibnd4x" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-  
-    <article id="post-TestSpecification" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/20/TestSpecification/" class="article-date">
-  <time datetime="2018-04-20T07:32:38.490Z" itemprop="datePublished">2018-04-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/测试/">测试</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/20/TestSpecification/">测试流程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="/images/TestSpecification.png" alt="TestSpecification"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://shirleydl.github.io/2018/04/20/TestSpecification/" data-id="cjghooecm0000fkmjdq3bxbiw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-  
-
-
 </section>
         
           <aside id="sidebar">
