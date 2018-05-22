@@ -5,18 +5,19 @@
   
 
   
-  <title>活动测试流程 | 记录</title>
+  <title>短信接口恶意攻击及防护 | 记录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="活动测试流程">
-<meta property="og:url" content="http://shirleydl.github.io/2018/04/27/ActivityTS/index.html">
+  <meta name="description" content="什么是短信接口恶意攻击：利用非自身的不同或相同的手机号码，多次请求短信发送接口进行轰炸，消耗短信资源导致无法正常使用短信服务等。 攻击过程：1、获取请求发送短信接口；2、利用工具更改请求发送短信接口的手机号码；3、后端发送短信业务接收到请求后，发送短信给指定的手机。   防护建议：请求短信发送接口加限制。（注意：限制都需要后端校验！）1、加不易被机器识别的图形验证码，当用户输入手机号码后，需要输入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="短信接口恶意攻击及防护">
+<meta property="og:url" content="http://shirleydl.github.io/2018/05/22/MessageAttack/index.html">
 <meta property="og:site_name" content="记录">
+<meta property="og:description" content="什么是短信接口恶意攻击：利用非自身的不同或相同的手机号码，多次请求短信发送接口进行轰炸，消耗短信资源导致无法正常使用短信服务等。 攻击过程：1、获取请求发送短信接口；2、利用工具更改请求发送短信接口的手机号码；3、后端发送短信业务接收到请求后，发送短信给指定的手机。   防护建议：请求短信发送接口加限制。（注意：限制都需要后端校验！）1、加不易被机器识别的图形验证码，当用户输入手机号码后，需要输入">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://shirleydl.github.io/images/ActivityTS.png">
-<meta property="og:updated_time" content="2018-04-27T03:44:23.203Z">
+<meta property="og:updated_time" content="2018-05-22T06:24:50.992Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="活动测试流程">
-<meta name="twitter:image" content="http://shirleydl.github.io/images/ActivityTS.png">
+<meta name="twitter:title" content="短信接口恶意攻击及防护">
+<meta name="twitter:description" content="什么是短信接口恶意攻击：利用非自身的不同或相同的手机号码，多次请求短信发送接口进行轰炸，消耗短信资源导致无法正常使用短信服务等。 攻击过程：1、获取请求发送短信接口；2、利用工具更改请求发送短信接口的手机号码；3、后端发送短信业务接收到请求后，发送短信给指定的手机。   防护建议：请求短信发送接口加限制。（注意：限制都需要后端校验！）1、加不易被机器识别的图形验证码，当用户输入手机号码后，需要输入">
   
     <link rel="alternate" href="/" title="记录" type="application/atom+xml">
   
@@ -65,14 +66,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-ActivityTS" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-MessageAttack" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/04/27/ActivityTS/" class="article-date">
-  <time datetime="2018-04-27T03:42:40.891Z" itemprop="datePublished">2018-04-27</time>
+    <a href="/2018/05/22/MessageAttack/" class="article-date">
+  <time datetime="2018-05-22T06:10:50.742Z" itemprop="datePublished">2018-05-22</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/测试/">测试</a>
+    <a class="article-category-link" href="/categories/安全/">安全</a>
   </div>
 
   </div>
@@ -83,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      活动测试流程
+      短信接口恶意攻击及防护
     </h1>
   
 
@@ -91,12 +92,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/images/ActivityTS.png" alt="ActivityTS"></p>
+        <p><strong>什么是短信接口恶意攻击：</strong><br>利用非自身的不同或相同的手机号码，多次请求短信发送接口进行轰炸，消耗短信资源导致无法正常使用短信服务等。</p>
+<p><strong>攻击过程：</strong><br>1、获取请求发送短信接口；<br>2、利用工具更改请求发送短信接口的手机号码；<br>3、后端发送短信业务接收到请求后，发送短信给指定的手机。  </p>
+<p><strong>防护建议：</strong><br>请求短信发送接口加限制。（注意：限制都需要后端校验！）<br>1、加不易被机器识别的图形验证码，当用户输入手机号码后，需要输入图形验证才可以发送短信；（注意：每个图形验证码只能使用一次！）<br>2、限制每个ip在一段时间的请求次数，且限制每次请求的间隔时间；<br>3、限制每个手机号在一段时间的请求次数，且显示每次请求的间隔时间。  </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://shirleydl.github.io/2018/04/27/ActivityTS/" data-id="cjhhag43s0000c0mjmj0bvtyz" class="article-share-link">Share</a>
+      <a data-url="http://shirleydl.github.io/2018/05/22/MessageAttack/" data-id="cjhhag4430004c0mjl98wwrtm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -105,19 +108,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/04/27/EvaluateRequirements/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          评估需求
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/04/20/TestSpecification/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/04/28/PerformanceIndex/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">测试流程</div>
+      <div class="article-nav-title">性能测试指标分析步骤</div>
     </a>
   
 </nav>

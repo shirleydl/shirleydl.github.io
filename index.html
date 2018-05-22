@@ -64,6 +64,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-MessageAttack" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/22/MessageAttack/" class="article-date">
+  <time datetime="2018-05-22T06:10:50.742Z" itemprop="datePublished">2018-05-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/安全/">安全</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/22/MessageAttack/">短信接口恶意攻击及防护</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>什么是短信接口恶意攻击：</strong><br>利用非自身的不同或相同的手机号码，多次请求短信发送接口进行轰炸，消耗短信资源导致无法正常使用短信服务等。</p>
+<p><strong>攻击过程：</strong><br>1、获取请求发送短信接口；<br>2、利用工具更改请求发送短信接口的手机号码；<br>3、后端发送短信业务接收到请求后，发送短信给指定的手机。  </p>
+<p><strong>防护建议：</strong><br>请求短信发送接口加限制。（注意：限制都需要后端校验！）<br>1、加不易被机器识别的图形验证码，当用户输入手机号码后，需要输入图形验证才可以发送短信；（注意：每个图形验证码只能使用一次！）<br>2、限制每个ip在一段时间的请求次数，且限制每次请求的间隔时间；<br>3、限制每个手机号在一段时间的请求次数，且显示每次请求的间隔时间。  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://shirleydl.github.io/2018/05/22/MessageAttack/" data-id="cjhhag4430004c0mjl98wwrtm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+  
     <article id="post-PerformanceIndex" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/04/28/PerformanceIndex/" class="article-date">
@@ -90,7 +135,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.收集、预估数据<br>A：平均每天请求该页面、接口用户数（若没有数据，可估计每天最大访问人数）<br>B：平均每天用户请求该页面、接口的时长；（当天用户在功能完整的可请求时间内，第一次请求到最后一次请求的平均间隔时间）（若没有数据，可估计每天访问时间）<br>C：平均每天用户在该页面、接口的平均在线时长；（当天用户从登陆到退出停留在该页面的平均时间）<br>D：平均每天用户在该页面、接口的平均间隔请求时间；（当天用户在该页面、接口重复访问的平均间隔时间）<br>E：平均每天用户在该页面、接口的平均请求次数；（当天用户在该页面、接口的平均请求次数，也可以用：（C）/（D））<br>F：平均每天用户在该页面、接口的平均操作时长；（当天用户在功能完整的可请求时间内，用户平均响应时长*用户总共请求次数）  </p>
+        <p>1.收集、预估数据<br>A：平均每天请求该页面、接口用户数；（若没有数据，可估计每天最大访问人数）<br>B：平均每天用户请求该页面、接口的时长；（当天用户在功能完整的可请求时间内，第一次请求到最后一次请求的平均间隔时间）（若没有数据，可估计每天访问时间）<br>C：平均每天用户在该页面、接口的平均在线时长；（当天用户从登陆到退出停留在该页面的平均时间）<br>D：平均每天用户在该页面、接口的平均间隔请求时间；（当天用户在该页面、接口重复访问的平均间隔时间）<br>E：平均每天用户在该页面、接口的平均请求次数；（当天用户在该页面、接口的平均请求次数，也可以用：（C）/（D））<br>F：平均每天用户在该页面、接口的平均操作时长；（当天用户在功能完整的可请求时间内，用户平均响应时长*用户总共请求次数）  </p>
 <p>2.计算并发值<br>平均并发数量：<br>公式一：（A）*（C）/（B）<br>公式二：（A）*（E）/（B）<br>公式三：（F）/（B）<br>并发峰值：<br>平均并发数量+3*√平均并发数量 </p>
 <p>3.压测配置<br>线程：并发数量（平均、峰值）<br>请求：根据场景进行添加请求链接<br>持续次数（t）：（A）/并发数量  </p>
 <p>4.压测结果要求<br>响应时间：4<br>错误率：1%<br>注：当错误率超过2%时，使用A或并发数量峰值进行同时并发请求，不需要循环，查看错误率是否超过1%，如果超过，需要记录并优化<br>吞吐量：线程*请求数/响应时间<br>服务器cpu使用率：70<br>服务器负载：8<br>数据库cpu使用率：70<br>内存使用率：65  </p>
@@ -99,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://shirleydl.github.io/2018/04/28/PerformanceIndex/" data-id="cjgjabmne0000jsmj34z02t7b" class="article-share-link">Share</a>
+      <a data-url="http://shirleydl.github.io/2018/04/28/PerformanceIndex/" data-id="cjhhag4440005c0mjpxakq2db" class="article-share-link">Share</a>
       
       
     </footer>
@@ -173,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://shirleydl.github.io/2018/04/27/EvaluateRequirements/" data-id="cjghooect0002fkmj8pyglb6p" class="article-share-link">Share</a>
+      <a data-url="http://shirleydl.github.io/2018/04/27/EvaluateRequirements/" data-id="cjhhag43z0002c0mj76eeqfvy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://shirleydl.github.io/2018/04/27/ActivityTS/" data-id="cjghooecw0004fkmj2hibnd4x" class="article-share-link">Share</a>
+      <a data-url="http://shirleydl.github.io/2018/04/27/ActivityTS/" data-id="cjhhag43s0000c0mjmj0bvtyz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://shirleydl.github.io/2018/04/20/TestSpecification/" data-id="cjghooecm0000fkmjdq3bxbiw" class="article-share-link">Share</a>
+      <a data-url="http://shirleydl.github.io/2018/04/20/TestSpecification/" data-id="cjhhag4450006c0mjv90tmy97" class="article-share-link">Share</a>
       
       
     </footer>
@@ -281,7 +326,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/测试/">测试</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/测试/">测试</a></li></ul>
     </div>
   </div>
 
@@ -296,7 +341,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
     </div>
   </div>
 
@@ -307,6 +352,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/05/22/MessageAttack/">短信接口恶意攻击及防护</a>
+          </li>
         
           <li>
             <a href="/2018/04/28/PerformanceIndex/">性能测试指标分析步骤</a>
