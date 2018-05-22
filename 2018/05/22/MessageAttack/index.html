@@ -102,12 +102,15 @@ var _hmt = _hmt || [];
       </header>
     
     <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>什么是短信接口恶意攻击：</strong><br>利用非自身的不同或相同的手机号码，多次请求短信发送接口进行轰炸，消耗短信资源导致无法正常使用短信服务等。</p>
+ 
+  	
+  	
+  	  <p><strong>什么是短信接口恶意攻击：</strong><br>利用非自身的不同或相同的手机号码，多次请求短信发送接口进行轰炸，消耗短信资源导致无法正常使用短信服务等。</p>
 <p><strong>攻击过程：</strong><br>1、获取请求发送短信接口；<br>2、利用工具更改请求发送短信接口的手机号码；<br>3、后端发送短信业务接收到请求后，发送短信给指定的手机。  </p>
 <p><strong>防护建议：</strong><br>请求短信发送接口加限制。（注意：限制都需要后端校验！）<br>1、加不易被机器识别的图形验证码，当用户输入手机号码后，需要输入图形验证才可以发送短信；（注意：每个图形验证码只能使用一次！）<br>2、限制每个ip在一段时间的请求次数，且限制每次请求的间隔时间；<br>3、限制每个手机号在一段时间的请求次数，且显示每次请求的间隔时间。  </p>
 
-      
+  	
+  
     </div>
     <footer class="article-footer">
       <a data-url="http://shirleydl.github.io/2018/05/22/MessageAttack/" data-id="cjhhag4430004c0mjl98wwrtm" class="article-share-link">Share</a>
