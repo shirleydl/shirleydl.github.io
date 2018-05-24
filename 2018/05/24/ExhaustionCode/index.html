@@ -16,18 +16,19 @@ var _hmt = _hmt || [];
 </script>
 
   
-  <title>测试流程 | 记录</title>
+  <title>爆破短信验证码 | 记录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="测试流程">
-<meta property="og:url" content="http://shirleydl.github.io/2018/04/20/TestSpecification/index.html">
+  <meta name="description" content="什么是爆破短信验证码：目前短信验证码大部分都是纯数字且有位数限制，所以在一个数值范围内存在一个正确的短信验证码，这时通过穷举验证码，利用工具来更改每次请求业务服务接口所需要的验证码值，就可通过业务校验。 攻击过程：假设短信验证码是四位数：1、穷举0000到9999，一共1万个值；2、获取请求需要短信验证码校验的业务服务接口；3、利用工具更改每次请求该接口的短信验证码；4、后端对应业务每次收到请求后">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爆破短信验证码">
+<meta property="og:url" content="http://shirleydl.github.io/2018/05/24/ExhaustionCode/index.html">
 <meta property="og:site_name" content="记录">
+<meta property="og:description" content="什么是爆破短信验证码：目前短信验证码大部分都是纯数字且有位数限制，所以在一个数值范围内存在一个正确的短信验证码，这时通过穷举验证码，利用工具来更改每次请求业务服务接口所需要的验证码值，就可通过业务校验。 攻击过程：假设短信验证码是四位数：1、穷举0000到9999，一共1万个值；2、获取请求需要短信验证码校验的业务服务接口；3、利用工具更改每次请求该接口的短信验证码；4、后端对应业务每次收到请求后">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://shirleydl.github.io/images/TestSpecification.png">
-<meta property="og:updated_time" content="2018-04-27T03:43:50.371Z">
+<meta property="og:updated_time" content="2018-05-24T06:02:16.859Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试流程">
-<meta name="twitter:image" content="http://shirleydl.github.io/images/TestSpecification.png">
+<meta name="twitter:title" content="爆破短信验证码">
+<meta name="twitter:description" content="什么是爆破短信验证码：目前短信验证码大部分都是纯数字且有位数限制，所以在一个数值范围内存在一个正确的短信验证码，这时通过穷举验证码，利用工具来更改每次请求业务服务接口所需要的验证码值，就可通过业务校验。 攻击过程：假设短信验证码是四位数：1、穷举0000到9999，一共1万个值；2、获取请求需要短信验证码校验的业务服务接口；3、利用工具更改每次请求该接口的短信验证码；4、后端对应业务每次收到请求后">
   
     <link rel="alternate" href="/" title="记录" type="application/atom+xml">
   
@@ -76,14 +77,14 @@ var _hmt = _hmt || [];
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-TestSpecification" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ExhaustionCode" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/04/20/TestSpecification/" class="article-date">
-  <time datetime="2018-04-20T07:32:38.490Z" itemprop="datePublished">2018-04-20</time>
+    <a href="/2018/05/24/ExhaustionCode/" class="article-date">
+  <time datetime="2018-05-24T05:53:19.445Z" itemprop="datePublished">2018-05-24</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/测试/">测试</a>
+    <a class="article-category-link" href="/categories/安全/">安全</a>
   </div>
 
   </div>
@@ -94,7 +95,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      测试流程
+      爆破短信验证码
     </h1>
   
 
@@ -104,13 +105,15 @@ var _hmt = _hmt || [];
  
   	
   	
-  	  <p><img src="/images/TestSpecification.png" alt="TestSpecification"></p>
+  	  <p><strong>什么是爆破短信验证码：</strong><br>目前短信验证码大部分都是纯数字且有位数限制，所以在一个数值范围内存在一个正确的短信验证码，这时通过穷举验证码，利用工具来更改每次请求业务服务接口所需要的验证码值，就可通过业务校验。</p>
+<p><strong>攻击过程：</strong><br>假设短信验证码是四位数：<br>1、穷举0000到9999，一共1万个值；<br>2、获取请求需要短信验证码校验的业务服务接口；<br>3、利用工具更改每次请求该接口的短信验证码；<br>4、后端对应业务每次收到请求后，对短信验证码进行校验，返回对应结果信息，通过结果信息可知道穷举是否成功。 </p>
+<p><strong>防护建议：</strong><br>限制验证码的有效时间，并且限制对应手机号输入验证码的错误次数。<br><strong>注意：在这不建议通过缩短验证码的有效时间或加长验证码的位数来进行防护。</strong><br>例如：不限制对应手机号输入验证码的错误次数，6位的纯数字短信验证码，100万个值，5分钟内有效期。一台普通配置的电脑可以在5分钟内请求1-2万的值，100台电脑就可以在5分钟内穷举请求成功，而且，随着科技的进步，电脑性能越高，每分每秒可请求的次数也会跟着上升，所以不要把赌注押在日益更新的计算机性能上！ </p>
 
   	
   
     </div>
     <footer class="article-footer">
-      <a data-url="http://shirleydl.github.io/2018/04/20/TestSpecification/" data-id="cjhk4ntan000658mj8ng5ysbn" class="article-share-link">Share</a>
+      <a data-url="http://shirleydl.github.io/2018/05/24/ExhaustionCode/" data-id="cjhk4ntah000258mj77utqxva" class="article-share-link">Share</a>
       
       
     </footer>
@@ -119,15 +122,11 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2018/04/27/ActivityTS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          活动测试流程
-        
-      </div>
-    </a>
   
+    <a href="/2018/05/22/MessageAttack/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">短信接口恶意攻击及防护</div>
+    </a>
   
 </nav>
 
