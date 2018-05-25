@@ -16,19 +16,19 @@ var _hmt = _hmt || [];
 </script>
 
   
-  <title>关于 | 记录</title>
+  <title>重置密码逻辑漏洞 | 记录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="时间过去太久，有些东西就会忘了，写博客主要是为了记录自己还能想起自己做过的东西，顺便回忆一下以前的青春年华，哈哈哈哈哈哈哈~~~~回到正题，如果有兴趣欢迎交流 邮箱（3318549466#qq.com，把#换成@）">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://shirleydl.github.io/about/index.html">
+  <meta name="description" content="什么是重置密码逻辑漏洞：重置密码是给用户在忘记密码的时候更改密码的功能，当校验有缺陷时，就会被别人绕过更改任意用户密码。常见问题：重置密码身份校验与修改密码功能分开，修改密码的时候没有再次校验用户身份，导致攻击者利用自己身份绕过前面的身份校验，然后在修改密码的时候更改修改密码的用户id，来达到更改他人的密码。 攻击过程：1、收集需要更改的用户信息（如：用户id、用户名等）；2、获取请求重置密码的业">
+<meta property="og:type" content="article">
+<meta property="og:title" content="重置密码逻辑漏洞">
+<meta property="og:url" content="http://shirleydl.github.io/2018/05/25/ResetLogic/index.html">
 <meta property="og:site_name" content="记录">
-<meta property="og:description" content="时间过去太久，有些东西就会忘了，写博客主要是为了记录自己还能想起自己做过的东西，顺便回忆一下以前的青春年华，哈哈哈哈哈哈哈~~~~回到正题，如果有兴趣欢迎交流 邮箱（3318549466#qq.com，把#换成@）">
+<meta property="og:description" content="什么是重置密码逻辑漏洞：重置密码是给用户在忘记密码的时候更改密码的功能，当校验有缺陷时，就会被别人绕过更改任意用户密码。常见问题：重置密码身份校验与修改密码功能分开，修改密码的时候没有再次校验用户身份，导致攻击者利用自己身份绕过前面的身份校验，然后在修改密码的时候更改修改密码的用户id，来达到更改他人的密码。 攻击过程：1、收集需要更改的用户信息（如：用户id、用户名等）；2、获取请求重置密码的业">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-24T06:39:25.286Z">
+<meta property="og:updated_time" content="2018-05-25T06:45:06.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="时间过去太久，有些东西就会忘了，写博客主要是为了记录自己还能想起自己做过的东西，顺便回忆一下以前的青春年华，哈哈哈哈哈哈哈~~~~回到正题，如果有兴趣欢迎交流 邮箱（3318549466#qq.com，把#换成@）">
+<meta name="twitter:title" content="重置密码逻辑漏洞">
+<meta name="twitter:description" content="什么是重置密码逻辑漏洞：重置密码是给用户在忘记密码的时候更改密码的功能，当校验有缺陷时，就会被别人绕过更改任意用户密码。常见问题：重置密码身份校验与修改密码功能分开，修改密码的时候没有再次校验用户身份，导致攻击者利用自己身份绕过前面的身份校验，然后在修改密码的时候更改修改密码的用户id，来达到更改他人的密码。 攻击过程：1、收集需要更改的用户信息（如：用户id、用户名等）；2、获取请求重置密码的业">
   
     <link rel="alternate" href="/" title="记录" type="application/atom+xml">
   
@@ -77,12 +77,16 @@ var _hmt = _hmt || [];
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ResetLogic" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/about/index.html" class="article-date">
-  <time datetime="2018-05-24T06:39:25.286Z" itemprop="datePublished">2018-05-24</time>
+    <a href="/2018/05/25/ResetLogic/" class="article-date">
+  <time datetime="2018-05-25T06:40:16.487Z" itemprop="datePublished">2018-05-25</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/安全/">安全</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -91,7 +95,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      关于
+      重置密码逻辑漏洞
     </h1>
   
 
@@ -101,24 +105,37 @@ var _hmt = _hmt || [];
  
   	
   	
-  	  <p>时间过去太久，有些东西就会忘了，写博客主要是为了记录自己还能想起自己做过的东西，顺便回忆一下以前的青春年华，哈哈哈哈哈哈哈~~~~回到正题，如果有兴趣欢迎交流</p>
-<p>邮箱（3318549466#qq.com，把#换成@）</p>
+  	  <p><strong>什么是重置密码逻辑漏洞：</strong><br>重置密码是给用户在忘记密码的时候更改密码的功能，当校验有缺陷时，就会被别人绕过更改任意用户密码。<br><strong>常见问题：</strong><br>重置密码身份校验与修改密码功能分开，修改密码的时候没有再次校验用户身份，导致攻击者利用自己身份绕过前面的身份校验，然后在修改密码的时候更改修改密码的用户id，来达到更改他人的密码。</p>
+<p><strong>攻击过程：</strong><br>1、收集需要更改的用户信息（如：用户id、用户名等）；<br>2、获取请求重置密码的业务接口；<br>3、利用工具更改请求该接口所需的用户信息（即用户id、用户名等）；<br>4、后端对应业务收到请求后，更改该用户的密码。</p>
+<p><strong>防护建议：</strong><br>1、后端校验当前修改密码的用户身份与前面校验用户身份（如：手机短信验证码）是否匹配<br>2、用户身份信息（如：用户id、用户名等）加密，不可被猜解<br>3、如果使用加密信息校验用户身份，需要保管好加密信息，不能随意显示在外面，并且限制好加密信息有效范围，防止加密信息泄密后被攻击者利用</p>
 
   	
   
     </div>
     <footer class="article-footer">
-      <a data-url="http://shirleydl.github.io/about/index.html" data-id="cjhk4ntag000158mj5g73ce3w" class="article-share-link">Share</a>
+      <a data-url="http://shirleydl.github.io/2018/05/25/ResetLogic/" data-id="cjhllrtio00008omjjzyx22i3" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/24/ExhaustionCode/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">爆破短信验证码</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
 
+  
+ 
   
 </section>
         
