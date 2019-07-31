@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+<script type="text/javascript">
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b34decbfcd4e5709792cc00a279b1b83";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+  
+  <title>自研接口自动化测试平台 | 记录</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！ 环境该项目测试信息管理与测试执行是分开的，可分开部署运行 JAVA 1.8MYSQL测试平台为war（Spring+SpringMVC+meavn）测试执行为jar（Spring+meavn） 项目介绍  环境管理 增删查改测试环境地址      接口管理 增删查改接口API地址，并关联对应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自研接口自动化测试平台">
+<meta property="og:url" content="http://shirleydl.github.io/2019/07/31/AutoTest/index.html">
+<meta property="og:site_name" content="记录">
+<meta property="og:description" content="前言作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！ 环境该项目测试信息管理与测试执行是分开的，可分开部署运行 JAVA 1.8MYSQL测试平台为war（Spring+SpringMVC+meavn）测试执行为jar（Spring+meavn） 项目介绍  环境管理 增删查改测试环境地址      接口管理 增删查改接口API地址，并关联对应">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_environment.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_interface.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_interfaceCase_list.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_interfaceCase_detail.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_interfaceCase_result.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_testSuite_list.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_testSuiteWithCase.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_testSuite_bind.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_testSuite_result.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_task_list.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_task_result.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_function.png">
+<meta property="og:updated_time" content="2019-07-31T05:05:01.354Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="自研接口自动化测试平台">
+<meta name="twitter:description" content="前言作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！ 环境该项目测试信息管理与测试执行是分开的，可分开部署运行 JAVA 1.8MYSQL测试平台为war（Spring+SpringMVC+meavn）测试执行为jar（Spring+meavn） 项目介绍  环境管理 增删查改测试环境地址      接口管理 增删查改接口API地址，并关联对应">
+<meta name="twitter:image" content="http://shirleydl.github.io/images/AutoTest_environment.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">记录</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://shirleydl.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-AutoTest" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/31/AutoTest/" class="article-date">
+  <time datetime="2019-07-31T02:10:19.330Z" itemprop="datePublished">2019-07-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/开发/">开发</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      自研接口自动化测试平台
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+ 
+  	
+  	
+  	  <p><strong>前言</strong><br>作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！</p>
+<p><strong>环境</strong><br>该项目测试信息管理与测试执行是分开的，可分开部署运行</p>
+<p>JAVA 1.8<br>MYSQL<br>测试平台为war（Spring+SpringMVC+meavn）<br>测试执行为jar（Spring+meavn）</p>
+<p><strong>项目介绍</strong></p>
+<ul>
+<li>环境管理<ul>
+<li>增删查改测试环境地址</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/AutoTest_environment.png" alt="AutoTest_environment"></p>
+<ul>
+<li>接口管理<ul>
+<li>增删查改接口API地址，并关联对应测试环境</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/AutoTest_interface.png" alt="AutoTest_interface"></p>
+<ul>
+<li>用例管理<ul>
+<li>增删查改测试用例信息，包括关联的接口、请求头、请求方法、请求参数、断言信息、用例变量信息等，所有值可使用函数关键字进行取值，详细可看函数说明</li>
+<li>复制测试用例信息</li>
+<li>执行测试用例进行调试</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/AutoTest_interfaceCase_list.png" alt="AutoTest_interfaceCase_list"></p>
+<p><img src="/images/AutoTest_interfaceCase_detail.png" alt="AutoTest_interfaceCase_detail"></p>
+<p><img src="/images/AutoTest_interfaceCase_result.png" alt="AutoTest_interfaceCase_result"></p>
+<ul>
+<li>测试集管理<ul>
+<li>增删查改测试集及里面相应的用例内容，包括用例信息、用例执行优先级、要求响应时间、赋值变量给该测试集里其他测试用例使用等等，变量值可使用函数关键字进行取值，详细可看函数说明</li>
+<li>复制测试集里面用例信息添加到另一个测试集</li>
+<li>执行测试集进行调试</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/AutoTest_testSuite_list.png" alt="AutoTest_testSuite_list"></p>
+<p><img src="/images/AutoTest_testSuiteWithCase.png" alt="AutoTest_testSuiteWithCase"></p>
+<p><img src="/images/AutoTest_testSuite_bind.png" alt="AutoTest_testSuite_bind"></p>
+<p><img src="/images/AutoTest_testSuite_result.png" alt="AutoTest_testSuite_result"></p>
+<ul>
+<li>任务管理<ul>
+<li>增删查改测试任务及里面相应的测试集，包括测试集执行优先级、任务定时执行时间设置、任务执行状态，任务执行结果列表及明细（执行器每10分钟执行一次）</li>
+<li>复制任务里面测试集信息添加到另一个任务</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/AutoTest_task_list.png" alt="AutoTest_task_list"></p>
+<p><img src="/images/AutoTest_task_result.png" alt="AutoTest_task_result"></p>
+<ul>
+<li>函数助手：编写接口用例、赋值测试集变量时可调用的关键字</li>
+</ul>
+<p><img src="/images/AutoTest_function.png" alt="AutoTest_function"></p>
+<p><strong>问题反馈</strong><br>该项目为长期迭代项目，如有兴趣欢迎qq或邮箱提建议<br>邮件(3318549466#qq.com, 把#换成@)<br>QQ: 3318549466</p>
+
+  	
+  
+    </div>
+    <footer class="article-footer">
+
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/31/GenerateJmeter/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          自研Jmeter自动生成脚本
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/25/ResetLogic/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">重置密码逻辑漏洞</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+  
+ 
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/安全/">安全</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发/">开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/测试/">测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/31/GenerateJmeter/">自研Jmeter自动生成脚本</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/31/AutoTest/">自研接口自动化测试平台</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/25/ResetLogic/">重置密码逻辑漏洞</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/24/ExhaustionCode/">爆破短信验证码</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/22/MessageAttack/">短信接口恶意攻击及防护</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Shirley<br>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

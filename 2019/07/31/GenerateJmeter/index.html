@@ -16,18 +16,23 @@ var _hmt = _hmt || [];
 </script>
 
   
-  <title>测试流程 | 记录</title>
+  <title>自研Jmeter自动生成脚本 | 记录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="测试流程">
-<meta property="og:url" content="http://shirleydl.github.io/2018/04/20/TestSpecification/index.html">
+  <meta name="description" content="前言貌似现在很多人都在用Jmeter，会不会为了获取一个页面或几个页面的请求链接而感到崩溃呢？尤其还要把它们弄进Jmeter！我就遇见过这样的需求！于是开始做起了一个工具——自动生成jmeter脚本 环境该项目为c/s架构JAVA 1.8 项目介绍  文件处理 提取文件的请求信息，包括请求方法、请求链接、请求数据并生成文件（可用Har文件，但需保证提取的关键字在每个请求信息中保证唯一）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="自研Jmeter自动生成脚本">
+<meta property="og:url" content="http://shirleydl.github.io/2019/07/31/GenerateJmeter/index.html">
 <meta property="og:site_name" content="记录">
+<meta property="og:description" content="前言貌似现在很多人都在用Jmeter，会不会为了获取一个页面或几个页面的请求链接而感到崩溃呢？尤其还要把它们弄进Jmeter！我就遇见过这样的需求！于是开始做起了一个工具——自动生成jmeter脚本 环境该项目为c/s架构JAVA 1.8 项目介绍  文件处理 提取文件的请求信息，包括请求方法、请求链接、请求数据并生成文件（可用Har文件，但需保证提取的关键字在每个请求信息中保证唯一）">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://shirleydl.github.io/images/TestSpecification.png">
-<meta property="og:updated_time" content="2018-04-27T03:43:50.371Z">
+<meta property="og:image" content="http://shirleydl.github.io/images/GenerateJmeter_split.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/GenerateJmeter_split2.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/GenerateJmeter.jpg">
+<meta property="og:updated_time" content="2019-07-31T05:42:09.374Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="测试流程">
-<meta name="twitter:image" content="http://shirleydl.github.io/images/TestSpecification.png">
+<meta name="twitter:title" content="自研Jmeter自动生成脚本">
+<meta name="twitter:description" content="前言貌似现在很多人都在用Jmeter，会不会为了获取一个页面或几个页面的请求链接而感到崩溃呢？尤其还要把它们弄进Jmeter！我就遇见过这样的需求！于是开始做起了一个工具——自动生成jmeter脚本 环境该项目为c/s架构JAVA 1.8 项目介绍  文件处理 提取文件的请求信息，包括请求方法、请求链接、请求数据并生成文件（可用Har文件，但需保证提取的关键字在每个请求信息中保证唯一）">
+<meta name="twitter:image" content="http://shirleydl.github.io/images/GenerateJmeter_split.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -72,14 +77,14 @@ var _hmt = _hmt || [];
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-TestSpecification" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-GenerateJmeter" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/04/20/TestSpecification/" class="article-date">
-  <time datetime="2018-04-20T07:32:38.490Z" itemprop="datePublished">2018-04-20</time>
+    <a href="/2019/07/31/GenerateJmeter/" class="article-date">
+  <time datetime="2019-07-31T05:20:28.751Z" itemprop="datePublished">2019-07-31</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/测试/">测试</a>
+    <a class="article-category-link" href="/categories/开发/">开发</a>
   </div>
 
   </div>
@@ -90,7 +95,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      测试流程
+      自研Jmeter自动生成脚本
     </h1>
   
 
@@ -100,7 +105,31 @@ var _hmt = _hmt || [];
  
   	
   	
-  	  <p><img src="/images/TestSpecification.png" alt="TestSpecification"></p>
+  	  <p><strong>前言</strong><br>貌似现在很多人都在用Jmeter，会不会为了获取一个页面或几个页面的请求链接而感到崩溃呢？尤其还要把它们弄进Jmeter！我就遇见过这样的需求！于是开始做起了一个工具——自动生成jmeter脚本</p>
+<p><strong>环境</strong><br>该项目为c/s架构<br>JAVA 1.8</p>
+<p><strong>项目介绍</strong></p>
+<ul>
+<li>文件处理<ul>
+<li>提取文件的请求信息，包括请求方法、请求链接、请求数据并生成文件（可用Har文件，但需保证提取的关键字在每个请求信息中保证唯一）</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/GenerateJmeter_split.png" alt="GenerateJmeter_split"></p>
+<ul>
+<li>过滤字符<ul>
+<li>保留文件每行包含关键字的信息（可支持多个关键字）</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/GenerateJmeter_split2.png" alt="GenerateJmeter_split2"></p>
+<ul>
+<li>生成脚本<ul>
+<li>通过提取出请求信息的文件，生成对应的线程组里请求的信息（可支持多个文件）</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/GenerateJmeter.jpg" alt="GenerateJmeter"></p>
+<p><strong>问题反馈</strong><br>该项目为长期迭代项目，如有兴趣欢迎qq或邮箱提建议<br>邮件(3318549466#qq.com, 把#换成@)<br>QQ: 3318549466</p>
 
   	
   
@@ -115,15 +144,11 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2018/04/27/ActivityTS/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          活动测试流程
-        
-      </div>
-    </a>
   
+    <a href="/2019/07/31/AutoTest/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">自研接口自动化测试平台</div>
+    </a>
   
 </nav>
 
