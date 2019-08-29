@@ -19,12 +19,12 @@ var _hmt = _hmt || [];
   
   <title>自研接口自动化测试平台 | 记录</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！ 环境该项目测试信息管理与测试执行是分开的，可分开部署运行 JAVA 1.8MYSQL测试平台为war（Spring+SpringMVC+meavn）测试执行为jar（Spring+meavn） 项目介绍  环境管理 增删查改测试环境地址      接口管理 增删查改接口API地址，并关联对应">
+  <meta name="description" content="前言作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！ 源码地址https://github.com/shirleydl/ATest 环境该项目测试信息管理与测试执行是分开的，可分开部署运行 JAVA 1.8MYSQL测试平台为war（Spring+SpringMVC+meavn）测试执行为jar（Spring+meavn） 功能介绍：环境管理：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="自研接口自动化测试平台">
 <meta property="og:url" content="http://shirleydl.github.io/2019/07/31/AutoTest/index.html">
 <meta property="og:site_name" content="记录">
-<meta property="og:description" content="前言作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！ 环境该项目测试信息管理与测试执行是分开的，可分开部署运行 JAVA 1.8MYSQL测试平台为war（Spring+SpringMVC+meavn）测试执行为jar（Spring+meavn） 项目介绍  环境管理 增删查改测试环境地址      接口管理 增删查改接口API地址，并关联对应">
+<meta property="og:description" content="前言作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！ 源码地址https://github.com/shirleydl/ATest 环境该项目测试信息管理与测试执行是分开的，可分开部署运行 JAVA 1.8MYSQL测试平台为war（Spring+SpringMVC+meavn）测试执行为jar（Spring+meavn） 功能介绍：环境管理：">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_environment.png">
 <meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_interface.png">
@@ -35,14 +35,17 @@ var _hmt = _hmt || [];
 <meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_testSuiteWithCase.png">
 <meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_testSuite_bind.png">
 <meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_testSuite_result.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/ATest_productList.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/ATest_productWithSuite.png">
 <meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_task_list.png">
 <meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_taskWithTestSuite.png">
 <meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_task_result.png">
+<meta property="og:image" content="http://shirleydl.github.io/images/ATest_replace.png">
 <meta property="og:image" content="http://shirleydl.github.io/images/AutoTest_function.png">
-<meta property="og:updated_time" content="2019-08-09T05:45:10.784Z">
+<meta property="og:updated_time" content="2019-08-29T05:55:16.706Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="自研接口自动化测试平台">
-<meta name="twitter:description" content="前言作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！ 环境该项目测试信息管理与测试执行是分开的，可分开部署运行 JAVA 1.8MYSQL测试平台为war（Spring+SpringMVC+meavn）测试执行为jar（Spring+meavn） 项目介绍  环境管理 增删查改测试环境地址      接口管理 增删查改接口API地址，并关联对应">
+<meta name="twitter:description" content="前言作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！ 源码地址https://github.com/shirleydl/ATest 环境该项目测试信息管理与测试执行是分开的，可分开部署运行 JAVA 1.8MYSQL测试平台为war（Spring+SpringMVC+meavn）测试执行为jar（Spring+meavn） 功能介绍：环境管理：">
 <meta name="twitter:image" content="http://shirleydl.github.io/images/AutoTest_environment.png">
   
   
@@ -116,60 +119,77 @@ var _hmt = _hmt || [];
  
   	
   	
-  	  <p><strong>前言</strong><br>作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！</p>
-<p><strong>环境</strong><br>该项目测试信息管理与测试执行是分开的，可分开部署运行</p>
+  	  <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作者很想吐槽一句，前后端分离的情况下，solo项目真心累，尤其是我这种前端渣渣，所以界面丑请多多包含！</p>
+<h2 id="源码地址"><a href="#源码地址" class="headerlink" title="源码地址"></a>源码地址</h2><p><a href="https://github.com/shirleydl/ATest" target="_blank" rel="noopener">https://github.com/shirleydl/ATest</a></p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>该项目测试信息管理与测试执行是分开的，可分开部署运行</p>
 <p>JAVA 1.8<br>MYSQL<br>测试平台为war（Spring+SpringMVC+meavn）<br>测试执行为jar（Spring+meavn）</p>
-<p><strong>项目介绍</strong></p>
-<ul>
-<li>环境管理<ul>
-<li>增删查改测试环境地址</li>
-</ul>
-</li>
-</ul>
+<h2 id="功能介绍："><a href="#功能介绍：" class="headerlink" title="功能介绍："></a>功能介绍：</h2><h3 id="环境管理："><a href="#环境管理：" class="headerlink" title="环境管理："></a>环境管理：</h3><p>增删查改环境信息</p>
 <p><img src="/images/AutoTest_environment.png" alt="AutoTest_environment"></p>
-<ul>
-<li>接口管理<ul>
-<li>增删查改接口API地址，并关联对应测试环境</li>
-</ul>
-</li>
-</ul>
+<h3 id="接口管理"><a href="#接口管理" class="headerlink" title="接口管理"></a>接口管理</h3><p>增删查改接口API地址，并关联对应测试环境</p>
 <p><img src="/images/AutoTest_interface.png" alt="AutoTest_interface"></p>
-<ul>
-<li>用例管理<ul>
-<li>增删查改测试用例信息，包括关联的接口、请求头、请求方法、请求参数、断言信息、用例变量信息等，所有值可使用函数关键字进行取值，详细可看函数说明</li>
-<li>复制测试用例信息</li>
-<li>执行测试用例进行调试</li>
-</ul>
+<h3 id="用例管理"><a href="#用例管理" class="headerlink" title="用例管理"></a>用例管理</h3><ol>
+<li><p>增删查改用例信息</p>
 </li>
-</ul>
+<li><p>请求方法支持：get、post（form）、post（raw）</p>
+</li>
+<li><p>断言方法支持：等于、不等于、包含、不包含、正则匹配、以。。。开始，以。。。结束</p>
+</li>
+<li><p>请求头值、请求内容、断言信息、用例变量都支持系统给定或自定义扩展函数引入</p>
+</li>
+<li><p>支持用例内全局变量使用</p>
+</li>
+<li><p>支持手动执行用例并返回结果，可针对用例进行调试</p>
+</li>
+<li><p>支持复制用例</p>
+</li>
+</ol>
 <p><img src="/images/AutoTest_interfaceCase_list.png" alt="AutoTest_interfaceCase_list"></p>
 <p><img src="/images/AutoTest_interfaceCase_detail.png" alt="AutoTest_interfaceCase_detail"></p>
 <p><img src="/images/AutoTest_interfaceCase_result.png" alt="AutoTest_interfaceCase_result"></p>
+<h3 id="测试集管理"><a href="#测试集管理" class="headerlink" title="测试集管理"></a>测试集管理</h3><ol>
+<li><p>增删查改测试集信息</p>
+</li>
+<li><p>用例管理：</p>
+</li>
+</ol>
 <ul>
-<li>测试集管理<ul>
-<li>增删查改测试集及里面相应的用例内容，包括用例信息、用例执行优先级、要求响应时间、赋值变量给该测试集里其他测试用例使用等等，变量值可使用函数关键字进行取值，详细可看函数说明</li>
-<li>复制测试集里面用例信息添加到另一个测试集</li>
-<li>执行测试集进行调试</li>
-</ul>
+<li><p>支持增删查改关联的测试用例及其他执行信息</p>
+</li>
+<li><p>支持为每个关联的用例信息绑定、引入测试集全局变量</p>
+</li>
+<li><p>支持手动执行测试集并返回结果，可针对测试集进行调试</p>
 </li>
 </ul>
+<ol start="3">
+<li>支持复制测试集里面的用例信息到其他测试集里</li>
+</ol>
 <p><img src="/images/AutoTest_testSuite_list.png" alt="AutoTest_testSuite_list"></p>
 <p><img src="/images/AutoTest_testSuiteWithCase.png" alt="AutoTest_testSuiteWithCase"></p>
 <p><img src="/images/AutoTest_testSuite_bind.png" alt="AutoTest_testSuite_bind"></p>
 <p><img src="/images/AutoTest_testSuite_result.png" alt="AutoTest_testSuite_result"></p>
-<ul>
-<li>任务管理<ul>
-<li>增删查改测试任务及里面相应的测试集，包括测试集执行优先级、任务定时执行时间设置、任务执行状态，任务执行结果列表及明细（执行器每10分钟执行一次）</li>
-<li>复制任务里面测试集信息添加到另一个任务</li>
-</ul>
+<h3 id="产品项目管理"><a href="#产品项目管理" class="headerlink" title="产品项目管理"></a>产品项目管理</h3><ol>
+<li><p>增删查改产品项目信息</p>
 </li>
-</ul>
+<li><p>测试集管理：增删查改关联的测试集，可批量添加测试集到指定任务里</p>
+</li>
+</ol>
+<p><img src="/images/ATest_productList.png" alt="ATest_productList"><br><img src="/images/ATest_productWithSuite.png" alt="ATest_productWithSuite"></p>
+<h3 id="任务管理"><a href="#任务管理" class="headerlink" title="任务管理"></a>任务管理</h3><ol>
+<li><p>增删查改任务信息</p>
+</li>
+<li><p>测试集管理：增删查改关联的测试集</p>
+</li>
+<li><p>支持复制任务里面的测试集信息到其他任务里</p>
+</li>
+<li><p>支持设置前置任务，在执行任务前执行，并分享所有测试集变量值到本次测试任务里执行使用（注意变量名不要重复，否则会被覆盖）</p>
+</li>
+</ol>
 <p><img src="/images/AutoTest_task_list.png" alt="AutoTest_task_list"></p>
 <p><img src="/images/AutoTest_taskWithTestSuite.png" alt="AutoTest_task_result"></p>
 <p><img src="/images/AutoTest_task_result.png" alt="AutoTest_task_result"></p>
-<ul>
-<li>函数助手：编写接口用例、赋值测试集变量时可调用的关键字</li>
-</ul>
+<h3 id="替换管理"><a href="#替换管理" class="headerlink" title="替换管理"></a>替换管理</h3><p>增删替换信息（替换环境地址、替换用例变量值）</p>
+<p><img src="/images/ATest_replace.png" alt="ATest_replace"></p>
+<h3 id="函数助手："><a href="#函数助手：" class="headerlink" title="函数助手："></a>函数助手：</h3><p>可查看系统给定的所有函数名及使用格式</p>
 <p><img src="/images/AutoTest_function.png" alt="AutoTest_function"></p>
 <p><strong>问题反馈</strong><br>该项目为长期迭代项目，如有兴趣欢迎qq或邮箱提建议<br>邮件(3318549466#qq.com, 把#换成@)<br>QQ: 3318549466</p>
 
